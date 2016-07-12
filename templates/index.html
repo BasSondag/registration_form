@@ -1,0 +1,76 @@
+<!doctypehtml>
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+ 		<title>My First Template</title>
+ 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+ 		<script type="text/javascript" src='{{ url_for('static', filename='script/script.js') }}'></script>
+
+    </head>
+ 	<body>
+ 	<div>
+ 		<h3>Register here:</h3>
+ 		{% with success = get_flashed_messages(category_filter=['succes']) %}
+			{% if success %}
+				{% for message in success %}
+					<h3>{{message}}</h3>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+ 		<form action="/users" method="POST">
+ 			{% with first_names = get_flashed_messages(category_filter=['first_name']) %}
+				{% if first_names %}
+					{% for message in first_names %}
+						<p id="flag">{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+ 			<p>Your frist name:<input type="text" name="first_name"></input></p>
+ 			{% with last_names = get_flashed_messages(category_filter=['last_name']) %}
+				{% if last_names %}
+					{% for message in last_names %}
+						<p id="flag">{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+ 			<p>Your last name:<input type="text" name="last_name"></input></p>
+ 			{% with emails = get_flashed_messages(category_filter=['email']) %}
+				{% if emails %}
+					{% for message in emails %}
+						<p id="flag">{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+ 			<p>Your email adress:<input type="text" name="email"></input></p>
+ 			{% with passwords = get_flashed_messages(category_filter=['password']) %}
+				{% if passwords %}
+					{% for message in passwords %}
+						<p id="flag">{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+ 			<p>Your password:<input type="password" name="password" ></input></p>
+ 			{% with conf_passwords= get_flashed_messages(category_filter=['conf_password']) %}
+				{% if conf_passwords %}
+					{% for message in conf_passwords %}
+						<p id="flag">{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+ 			<p>Comfirm your password:<input type="password" name="conf_password" ></input></p>
+<!--  			{% with dates = get_flashed_messages(category_filter=['date']) %}
+				{% if dates %}
+					{% for message in dates %}
+						<p id="flag">{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+ 			<p>Date of birth (mm-dd-yy)<input type="text" name="date"></input></p> -->
+ 			<input type="submit" name="submit"></input>
+ 		</form>
+ 		
+ 	</div>
+
+ 	</body>
+</html> 	

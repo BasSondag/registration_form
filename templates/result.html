@@ -1,0 +1,21 @@
+<!doctypehtml>
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+ 		<title>My First Template</title>
+ 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+ 		<script type="text/javascript" src='{{ url_for('static', filename='script/script.js') }}'></script>
+
+    </head>
+ 	<body>
+
+	 	<div id="result">
+	 		<p>Your first name is :{{session['first_name']}}</p>
+	 		<p>Your last name is :{{session['last_name']}}</p></p>
+	 		<p>Your email is :{{session['email']}}</p></p>
+	 		<p>Your password is :{{session['password']}}</p></p>
+	 		<p>Your conformation is :{{session['conf_password']}}</p></p>
+	 	</div>
+
+ 	</body>
+ </html>

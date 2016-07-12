@@ -1,0 +1,28 @@
+div {
+	margin: 0px auto;
+	border: 2px solid darkgray ;
+	width: 400px;
+	padding: 20px;
+	text-align: right;
+}
+
+#result {
+	text-align: center;
+}
+
+#flag {
+	margin-right:100px;
+	text-align: left;
+}
+
+input {
+	margin-right:100px;
+	text-align: left;
+
+	/*display: block;*/
+}
+
+h3 {
+	text-align: center;
+
+}
